@@ -14,13 +14,11 @@ import com.zexovian.api.repository.ContactRepository;
 
 @RestController
 @RequestMapping("/api/v1")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*") // 👈 यहाँ बदलाव कर दिया है, अब यह मोबाइल और लाइव साइट दोनों पर काम करेगा!
 public class ContactController {
 
-    // final वेरिएबल बेस्ट प्रैक्टिस है
     private final ContactRepository contactRepository;
 
-    // कंस्ट्रक्टर इंजेक्शन (Constructor Injection)
     public ContactController(ContactRepository contactRepository) {
         this.contactRepository = contactRepository;
     }
